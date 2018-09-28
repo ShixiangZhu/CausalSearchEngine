@@ -154,31 +154,12 @@ def getSimScore_and_print(user_vec, causal_vec, no_causal_vec, causal_kw, non_ca
 		for k,v in top10[0:5]:
 			print(k, v)
 			print(" ")
-# kwame nkrumah
-# africa
-
-
-# ethiopia
-# minister
-# hailemariam desalegn 
-
-# south sudan
-# presidential spokesperson
-# ateny wek ateny
 	
 def main():
   # PRINT SYSTEM INFO
   print_info()
   # READ IN M11 DATA
   causal_kw, non_causal_kw = readinKWresult('/Users/zhengshuangjing/desktop/work/projects/Causal50/intermedia_files/causal_keyword.txt', '/Users/zhengshuangjing/desktop/work/projects/Causal50/intermedia_files/nocausal_keyword.txt')
-  
-  # for i in causal_kw[500:550]:
-  # 	print(i)
-  # 	print(" ")
-  # for i in non_causal_kw[100:150]:
-  # 	print(i)
-  # 	print(" ")
-
   # GET USER'S INPUT:
   user_In = readinUser()
   # GET TFIDF VECTOR
