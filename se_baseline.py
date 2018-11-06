@@ -34,11 +34,10 @@ def print_info():
 	intro_list = []
 	intro_list.append("Usage: \nStep 1: You need to specify several keywords regarding what you want \nStep 2: Based on the keywords you provided, the system will retrive relevant or relevant and causal sentences")
 	intro.add_row(intro_list)
-	intro.align['Text filtering system v0 for harvey corpus (Author: THOR Group)'] = 'l'
+	intro.align['Causality Search Engine system v0 for harvey corpus (Author: Shixiang Zhu, THOR Group)'] = 'l'
 	print(intro)
 	print(" ")
-
-
+	
 """
 Readin m11 pre-stored data
 parameter: roots
@@ -61,6 +60,7 @@ def readinUser():
 	print("Your input is: ", userIn, " Type: ", userIn.__class__)
 	print(" ")
 	return userIn
+
 
 """
 Get tfidf vectors
@@ -96,13 +96,9 @@ parameter: user_vec, causal_vec, no_causal_vec, causal_kw, non_causal_kw
 return: 
 """
 def getSimScore_and_print(user_vec, causal_vec, no_causal_vec, causal_kw, non_causal_kw):
-	user_vec = user_vec.transpose()  # (98057, 1)
-	# print("Transpose: ", user_vec.shape)
-	# print(no_causal_vec.shape[0])
-
-	dict_causal = {} # index, simlarity pair
+	user_vec = user_vec.transpose()  
+	dict_causal = {} 
 	dict_no_causal = {}
-
 	causal_sim = np.dot(causal_vec, user_vec)
 	causal_sim = scipy.sparse.coo_matrix(causal_sim)
 	no_causal_sim = np.dot(no_causal_vec, user_vec)
