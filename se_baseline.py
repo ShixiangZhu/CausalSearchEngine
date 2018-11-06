@@ -132,13 +132,12 @@ def getSimScore_and_print(user_vec, causal_vec, no_causal_vec, causal_kw, non_ca
 	all_sort = [(k, all_dict[k]) for k in sorted(all_dict, key=all_dict.get, reverse=True)]
 	count = 0
 	for k,v in all_sort:
-		# print(k, v)
 		if count < 5:
 			if k < len(causal_kw):
 				print(causal_kw[k], v)
 			else:
 				print(non_causal_kw[k - len(causal_kw)], v)
-		count = count + 1
+		count += count
 
 	# Causal Result:
 	print(" ")
